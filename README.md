@@ -1,2 +1,17 @@
-# SQL-Savvy-Circle-Tasks
-Solutions to SQL practice tasks from SQL Savvy Circle WhatsApp channel
+# SQL Savvy Circle Practice Tasks
+
+This repository contains my solutions to SQL practice tasks from the SQL Savvy Circle WhatsApp channel. 
+Each task includes the problem statement, SQL solution and (where applicable) test data scripts.
+
+##Task Source
+
+All tasks are sourced from the SQL Savvy Circle Tasks [tasks](https://docs.google.com/document/d/11EA85FL-5zT2hBe--SY-gyG6JI3A-V-KQCHQAWCTstI/edit?tab=t.0).
+
+
+## Structure
+- 'tasks': All tasks
+- `days/`: Individual task folders (`Day 1`, `Day 2`, etc.).
+  - `problem.md`: Task description.
+  - `solution.sql`: SQL solution with comments.
+ 
+
