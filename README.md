@@ -9,7 +9,7 @@ All tasks are sourced from the SQL Savvy Circle Tasks [tasks](https://docs.googl
 
 
 ## Structure
-- 'tasks': All tasks
+- 'tasks': [All tasks](https://github.com/VasylBihari/SQL-Savvy-Circle-Tasks/blob/main/tasks/Q1%20SQL%20challenge.pdf)
 - `days/`: Individual task folders (`Day 1`, `Day 2`, etc.).
   - `problem.md`: Task description.
   - `solution.sql`: SQL solution with comments.
