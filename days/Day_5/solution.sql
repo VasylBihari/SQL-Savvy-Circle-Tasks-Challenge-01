@@ -1,5 +1,5 @@
 SELECT 
-	department_name,
+    department_name,
     ROUND(AVG(salary),2) AS avg_salary
 FROM Employees e
 JOIN Departments d ON e.department_id=d.department_id
