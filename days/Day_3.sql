@@ -2,11 +2,7 @@
 https://www.namastesql.com/coding-problem/52-loan-repayment?page=6&pageSize=10
 
 You're working for a large financial institution that provides various types of loans to customers. Your task is to analyze loan repayment data to assess credit risk and improve risk management strategies.
-
 Write an SQL to create 2 flags for each loan as per below rules. Display loan id, loan amount , due date and the 2 flags.
-
- 
-
 1- fully_paid_flag: 1 if the loan was fully repaid irrespective of payment date else it should be 0.
 2- on_time_flag : 1 if the loan was fully repaid on or before due date else 0.
 Table: loans
@@ -17,7 +13,6 @@ Table: loans
 | customer_id | int       |
 | loan_amount | int       |
 | due_date    | date      |
-
 
 Table: payments
 
