@@ -1,8 +1,23 @@
-/*Select BorrowerName from the Borrowers table.
-Uses a LEFT JOIN to join the Books table by BookID to include all borrowers, even if they haven't checked out a book.
-Aggregates the book names (BookName) into a comma-separated list (string_agg) sorted alphabetically (ORDER BY Books.BookName).
-Groups the results by borrower name (GROUP BY BorrowerName).
-Sorts the output by borrower name in ascending order (ORDER BY Borrowers.BorrowerName).*/
+/*Day 1
+https://www.namastesql.com/coding-problem/8-library-borrowing-habits?page=1&pageSize=10
+
+Imagine you're working for a library and you're tasked with generating a report on the borrowing habits of patrons. You have two tables in your database: Books and Borrowers.
+Write an SQL to display the name of each borrower along with a comma-separated list of the books they have borrowed in alphabetical order, display the output in ascending order of Borrower Name.
+
+## Tables
+- **Books**:
+  | Column Name | Data Type   |
+  |-------------|-------------|
+  | BookID      | int         |
+  | BookName    | varchar(30) |
+  | Genre       | varchar(20) |
+- **Borrowers**:
+  | Column Name  | Data Type   |
+  |--------------|-------------|
+  | BorrowerID   | int         |
+  | BorrowerName | varchar(10) |
+  | BookID       | int         |
+*/
 
 SELECT
 	Borrowers.BorrowerName,
