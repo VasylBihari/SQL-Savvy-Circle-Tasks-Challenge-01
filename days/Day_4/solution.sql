@@ -7,11 +7,12 @@ you want to exclude reviews that contain the word "not" immediately before "exce
 Your query should return the review_id,product_id, and review_text for each review meeting the criteria, display the output in ascending order of review_id.
 
 Table: product_reviews
+
 | COLUMN_NAME | DATA_TYPE    |
 |-------------|--------------|
 | review_id   | int          |
 | product_id  | int          |
-| review_text | varchar(40)  |*/
+| review_text | varchar(40)  |  */
 
 SELECT
 	*
