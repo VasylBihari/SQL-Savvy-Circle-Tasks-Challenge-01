@@ -1,6 +1,5 @@
 /*Table: Activity
 
-
 | Column Name   | Type    |
 ---------------------------
 | user_id       | int     |
