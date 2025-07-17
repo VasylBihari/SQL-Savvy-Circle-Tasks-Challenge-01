@@ -14,3 +14,23 @@ Table: orders
 | product_name  | varchar(10) |
 | sales         | int         |  */
 
+WITH table_orders AS(
+  SELECT 
+        *,
+        ROW_NUMBER() OVER (PARTITION BY customer_name ORDER BY order_date DESC) AS rn,
+        COUNT(*) OVER (PARTITION BY customer_name) AS order_count
+FROM orders)
+SELECT 
+    order_id,
+    order_date,
+    customer_name,
+    product_name,
+    sales
+FROM table_orders
+WHERE rn = CASE 
+              WHEN order_count = 1 THEN 1 
+              ELSE 2 
+           END
+ORDER BY customer_name ASC;
+
+
