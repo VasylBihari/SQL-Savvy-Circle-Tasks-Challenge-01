@@ -46,3 +46,16 @@ Confirmations table:
 | 2       | 2021-02-28 23:59:59 | timeout   |
 */
 
+SELECT 
+    s.user_id,
+    ROUND(
+        COALESCE(
+            SUM(CASE WHEN c.action = 'confirmed' THEN 1 ELSE 0 END)::numeric / 
+            NULLIF(COUNT(c.action), 0),
+            0
+        ),
+        2
+    ) AS confirmation_rate
+FROM Confirmations c
+RIGHT JOIN Signups s ON c.user_id=s.user_id
+GROUP BY s.user_id;
