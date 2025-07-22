@@ -23,3 +23,22 @@ Input: Delivery table:
 | 5           | 3           | 2019-08-21 | 2019-08-22                  |
 | 6           | 2           | 2019-08-11 | 2019-08-13                  |
 | 7           | 4           | 2019-08-09 | 2019-08-09                  |    */
+
+WITH first_orders AS (
+    SELECT
+        customer_id,
+        order_date,
+        customer_pref_delivery_date
+    FROM Delivery
+    WHERE (customer_id, order_date) IN (
+        SELECT customer_id, MIN(order_date)
+        FROM Delivery
+        GROUP BY customer_id
+    )
+)
+SELECT
+    ROUND(
+        COUNT(CASE WHEN order_date = customer_pref_delivery_date THEN 1 END) * 100.0 / COUNT(*), 
+        2
+    ) AS immediate_percentage
+FROM first_orders;
