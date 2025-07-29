@@ -25,4 +25,19 @@ Return all sales entries for that product in that year.
 Return a table with the following columns: product_id, first_year, quantity, and price.
 Return the result in any order.
 */
-SELECT
+WITH year_rank AS (
+    SELECT
+    product_id,
+    RANK() OVER (PARTITION BY product_id ORDER BY year) AS ranks,
+    year,
+    quantity,
+    price
+FROM Sales
+)
+SELECT 
+    product_id,
+    year AS first_year,
+    quantity,
+    price
+FROM year_rank
+WHERE ranks = 1
