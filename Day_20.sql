@@ -20,5 +20,9 @@ The prefix name is a string that may contain letters (upper or lower case), digi
 The domain is '@leetcode.com'.
 Return the result table in any order.
 */
-
-
+SELECT
+    user_id,
+    name,
+    mail
+FROM Users
+WHERE mail ~ '^[a-zA-Z][a-zA-Z0-9_.-]*@leetcode\.com$'
